@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/Preentrega1-Espinoza/static/css/main.ce776674.css",
-    "main.js": "/Preentrega1-Espinoza/static/js/main.f77e0caa.js",
-    "static/js/787.5d190bc1.chunk.js": "/Preentrega1-Espinoza/static/js/787.5d190bc1.chunk.js",
-    "static/media/logo.svg": "/Preentrega1-Espinoza/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
-    "index.html": "/Preentrega1-Espinoza/index.html",
-    "main.ce776674.css.map": "/Preentrega1-Espinoza/static/css/main.ce776674.css.map",
-    "main.f77e0caa.js.map": "/Preentrega1-Espinoza/static/js/main.f77e0caa.js.map",
-    "787.5d190bc1.chunk.js.map": "/Preentrega1-Espinoza/static/js/787.5d190bc1.chunk.js.map"
+    "main.css": "/Preentrega1-Espinoza/Desktop/primera%20app%20react%20js/mi/static/css/main.ce776674.css",
+    "main.js": "/Preentrega1-Espinoza/Desktop/primera%20app%20react%20js/mi/static/js/main.a9704780.js",
+    "static/js/787.5d190bc1.chunk.js": "/Preentrega1-Espinoza/Desktop/primera%20app%20react%20js/mi/static/js/787.5d190bc1.chunk.js",
+    "static/media/logo.svg": "/Preentrega1-Espinoza/Desktop/primera%20app%20react%20js/mi/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/Preentrega1-Espinoza/Desktop/primera%20app%20react%20js/mi/index.html",
+    "main.ce776674.css.map": "/Preentrega1-Espinoza/Desktop/primera%20app%20react%20js/mi/static/css/main.ce776674.css.map",
+    "main.a9704780.js.map": "/Preentrega1-Espinoza/Desktop/primera%20app%20react%20js/mi/static/js/main.a9704780.js.map",
+    "787.5d190bc1.chunk.js.map": "/Preentrega1-Espinoza/Desktop/primera%20app%20react%20js/mi/static/js/787.5d190bc1.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.ce776674.css",
-    "static/js/main.f77e0caa.js"
+    "static/js/main.a9704780.js"
   ]
 }
