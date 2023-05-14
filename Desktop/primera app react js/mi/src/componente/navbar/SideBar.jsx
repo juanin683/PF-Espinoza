@@ -1,43 +1,48 @@
 import React from "react";
 import './NavBar.css'
 import CartWidget from '../CarWidget/CarWidget'
+import '../../pages/Tablet'
+import { NavLink } from "react-router-dom";
+
+
 const SideBar = () => {
     return(
+        <>
         <nav>
         <div className="NavBar">
             <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"></link>
             <h1>
-                Mi logo
+                Dark Phone
             </h1>
             <ul>
                 <li className="home">
-                    <a href="#" className="estilo1"><i className="large material-icons">home</i></a>
-
-                
-                
+                    <NavLink to='/' className="estilo1"><i className="large material-icons">home</i></NavLink>
                 </li>
                 {/* carrito */}
                 < CartWidget/>
 
                 <li className="home">
-                     <a href="#" className="estilo1"> Tablets</a>
+                     <NavLink to='/categoria/tablets' className="estilo1"> Tablets</NavLink>
                 </li>
 
                 <li className="home">
-                     <a href="#" className="estilo1"> Celulares</a>
+                     <NavLink to='/categoria/celulares' className="estilo1"> Celulares</NavLink>
                 </li>
                 <li className="home">
-                     <a href="#" className="estilo1"> Laptops</a>
+                     <NavLink to='/categoria/laptops' className="estilo1"> Laptops</NavLink>
                 </li>
                 
                 <li className="home">
-                     <a href="#" className="estilo1"> Accesorios</a>
+                     <NavLink to='/categoria/accesorios-y-componentes' className="estilo1"> Accesorios y Componentes</NavLink>
                 </li>
 
-            </ul>
-        </div>
 
+
+            </ul>
+
+        </div>
         </nav>
+        </>
 
     )
 }
