@@ -1,8 +1,7 @@
 import React from "react";
 import ItemCount from "../ItemListContainer/ItemCount";
 
-
-export const ItemDetail = ({detalles}) => {
+export const ItemDetail = ({detalles,id,stock,onAdd}) => {
     return(
         <>
         <div className="detallesDelProducto">
@@ -28,7 +27,7 @@ export const ItemDetail = ({detalles}) => {
             
             <footer>
                 
-                <ItemCount stock={detalles.stock} iniciador={1} onAdd={detalles.onAdd}/>
+                <ItemCount stock={detalles.stock} iniciador={1} onAdd={(cantidad) =>  console.log(`Compraste ${cantidad} unidades`)}/>
 
             </footer>
         </div>

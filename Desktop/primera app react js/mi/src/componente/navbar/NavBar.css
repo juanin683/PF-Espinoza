@@ -1,6 +1,6 @@
 .NavBar{
-  background-color: #49576e;
-background-image: linear-gradient(151deg, #3f4346 0%, #01153f 25%, #b1a46d 66%, #8993a0 100%);
+  background-color: #a66464;
+background-image: linear-gradient(151deg, #14123c 0%, #2c0609 25%, #b1a46d 66%, #8993a0 100%);
 
   /* position: fixed;
   left:  0;
@@ -22,8 +22,13 @@ background-image: linear-gradient(151deg, #3f4346 0%, #01153f 25%, #b1a46d 66%, 
   display: flex;
 }
 
+.titulo-navbar{
+  color: beige;
+  text-decoration: inherit;
+  font-size: 30px;
+  margin: 10px;
+}
 .home{
- 
   list-style: none;
   padding: 8px;
   border-top-left-radius: 0.5rem;

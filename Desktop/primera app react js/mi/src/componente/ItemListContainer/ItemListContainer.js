@@ -11,7 +11,7 @@ const  ItemListContainer = () =>{
 
     useEffect(() =>{
         
-      const funcCategoria = categoriaId ? getDetalles : getDatos
+    const funcCategoria = categoriaId ? getDetalles : getDatos
         
     funcCategoria(categoriaId)
         .then(res =>{
@@ -26,11 +26,6 @@ const  ItemListContainer = () =>{
         
     }, [categoriaId])
 
-
-
-    const onAdd = (cantidad) => { 
-        console.log(`Compraste ${cantidad} unidades`)
-    }
 
     return(
         <>

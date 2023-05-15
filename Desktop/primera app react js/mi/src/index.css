@@ -7,10 +7,10 @@ body {
   -moz-osx-font-smoothing: grayscale; */
 
     /* background-color: rgb(185, 187, 211); */
-    background-image: url(../assets/setupceleste.jpg);
+    background-image: url(../assets/gaming.jpg);
     object-fit: cover;
     background-repeat: no-repeat;
-    background-size: 100% 752px; 
+    background-size: 138% 100%; 
     padding: 0;
     margin: 0;
   

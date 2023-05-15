@@ -1,8 +1,10 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 import './Item.css'
 import { getDatos } from "./Items";
 import Button from "./Button";
-
+import ItemDetail from "../ItemDetail/ItemDetail";
 
 
  const  Item = ({detalleDelItem}) =>{
@@ -28,10 +30,7 @@ import Button from "./Button";
             </p>
         </section>
         <footer className="contenedor-boton-info">
-            <Button
-            className="boton-info"
-            text="Ver Información"
-            />
+            <Link className="boton-info" to={`/item/${detalleDelItem.id}`}> <h1> Ver mas</h1></Link>
         </footer>
         </div>
         </>

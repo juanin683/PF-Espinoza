@@ -2,7 +2,7 @@ import React from "react";
 import './NavBar.css'
 import CartWidget from '../CarWidget/CarWidget'
 import '../../pages/Tablet'
-import { NavLink } from "react-router-dom";
+import { NavLink , Link } from "react-router-dom";
 
 
 const SideBar = () => {
@@ -11,9 +11,9 @@ const SideBar = () => {
         <nav>
         <div className="NavBar">
             <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"></link>
-            <h1>
-                Dark Phone
-            </h1>
+            
+            <Link to='/' ><h1 className="titulo-navbar">Dark Phone</h1></Link>
+            
             <ul>
                 <li className="home">
                     <NavLink to='/' className="estilo1"><i className="large material-icons">home</i></NavLink>
