@@ -1,0 +1,24 @@
+.detallesDelProducto{
+    display: inline-block;
+    margin-inline-start: 222px;
+    padding-inline-start: 273px;
+    margin-inline-end: 162px;   
+}
+
+.content{
+    color: white;
+    margin: 10px;
+    padding: 10px;
+}
+
+.detallesDelProducto img{
+    width: 400px;
+    height: 400px;
+}
+
+.p{
+    color: white;
+    font-size: 20px;
+    margin: 10px;
+    padding: 10px;
+}

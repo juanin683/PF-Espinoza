@@ -22,8 +22,11 @@ const productos = [
         stock: 20,
     },
     {id: '4',
-        nombre: "Tarjeta Grafica",
-        categoria: "accesorios-y-componentes"
+        nombre: "Tarjeta Grafica Asus Dual Geforce Rtx 2060 ",
+        precio:399999,
+        img:"https://http2.mlstatic.com/D_NQ_NP_914559-MLA49073417717_022022-O.webp",
+        categoria: "accesorios y componentes",
+        stock:13,
     },
 
 

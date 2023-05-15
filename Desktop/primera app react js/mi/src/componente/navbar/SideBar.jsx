@@ -33,7 +33,7 @@ const SideBar = () => {
                 </li>
                 
                 <li className="home">
-                     <NavLink to='/categoria/accesorios-y-componentes' className="estilo1"> Accesorios y Componentes</NavLink>
+                     <NavLink to='/categoria/accesorios y componentes' className="estilo1"> Accesorios y Componentes</NavLink>
                 </li>
 
 

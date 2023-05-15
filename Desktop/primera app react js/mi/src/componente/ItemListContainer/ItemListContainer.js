@@ -6,14 +6,14 @@ import { useParams } from "react-router-dom";
 const  ItemListContainer = () =>{
     const [productos,setProductos] = useState([])
 
-    const category = useParams().categoriaId
+    const category = useParams().categoria
 
 
     useEffect(() =>{
         getDatos()
         .then((res) =>{
             if (category) {
-                setProductos(res.filter((product) =>product.categoriaId === category))
+                setProductos(res.filter((product) =>product.categoria === category))
                 
             } else {
                 setProductos(res)
@@ -30,6 +30,7 @@ const  ItemListContainer = () =>{
             </h1>
 
             <h2 className="Subtitulo"> Tu lugar de equipos y componentes electronicos</h2>
+            
             <ItemList productos= {productos}/>
         </div>
         </>

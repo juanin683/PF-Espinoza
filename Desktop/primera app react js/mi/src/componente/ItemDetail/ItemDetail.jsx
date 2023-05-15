@@ -1,4 +1,5 @@
 import React from "react";
+import "./ItemDetail.css";
 import ItemCount from "../ItemListContainer/ItemCount";
 
 export const ItemDetail = ({detalles,id,stock,onAdd}) => {
@@ -10,11 +11,11 @@ export const ItemDetail = ({detalles,id,stock,onAdd}) => {
                 <h1>{detalles.nombre}</h1>
             </header>
             
-            <picture>
+            <picture className="img-de-prod">
                 <img src={detalles.img}  />
             </picture>
 
-            <section>
+            <section className="p">
                 <p>
                     Precio: ${detalles.precio}
                 </p>
