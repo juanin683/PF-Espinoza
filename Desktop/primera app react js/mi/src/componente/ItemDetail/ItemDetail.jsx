@@ -1,8 +1,25 @@
-import React from "react";
+import React, { useContext, useState } from "react";
+import { Link } from "react-router-dom";
+import { CartContext } from "../../CartContext/CartContext";
+import CartItem from "../CartItem/CartItem";
 import "./ItemDetail.css";
 import ItemCount from "../ItemListContainer/ItemCount";
 
-export const ItemDetail = ({detalles,id,stock,onAdd}) => {
+export const ItemDetail = ({detalles,id,nombre, precio, stock}) => {
+
+    const [irACarrito, setIrACarrito] = useState(false);
+    const {addItem} = useContext(CartContext)
+
+    const onAdd = (cantidad) =>{
+        setIrACarrito(cantidad)
+
+        const item = {
+            id,nombre,precio
+        }
+
+        addItem(item, cantidad)
+    }
+
     return(
         <>
         <div className="detallesDelProducto">
@@ -27,8 +44,12 @@ export const ItemDetail = ({detalles,id,stock,onAdd}) => {
             </section>
             
             <footer>
+                {
+                    irACarrito 
+                    ? <Link to='/cart' className="option"> Terminar mi compra</Link>
+                    :<ItemCount stock={detalles.stock} iniciador={1} onAdd={onAdd}/>
+                }
                 
-                <ItemCount stock={detalles.stock} iniciador={1} onAdd={(cantidad) =>  console.log(`Compraste ${cantidad} unidades`)}/>
 
             </footer>
         </div>
