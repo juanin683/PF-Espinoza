@@ -1,13 +1,17 @@
-export const CartItem = ({id,nombre,precio,img,quantity}) => {
-   
+import { CartContext} from '../../CartContext/CartContext'
+
+
+export const CartItem = ({productos}) => {
+   const { removeItem} = CartContext();
     return(
         <div>
-            <img src={img} alt="" />
-            <p>TiTulo {nombre}</p>    
-            <p>Precio ${precio}</p>    
-            <p>Cantidad {quantity}</p>    
+            <img src={productos.img} alt="" />
+            <p>TiTulo {productos.nombre}</p>    
+            <p>Precio ${productos.precio}</p>    
+            <p>Cantidad {productos.quantity}</p>    
             
-                    
+            <p>Subtotal: {productos.quantity * productos.precio}</p>
+            <button onClick={() => removeItem(productos.id)}> X </button>        
         </div>
     )
 }

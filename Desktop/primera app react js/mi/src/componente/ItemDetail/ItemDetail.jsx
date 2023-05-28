@@ -4,20 +4,22 @@ import { CartContext } from "../../CartContext/CartContext";
 import CartItem from "../CartItem/CartItem";
 import "./ItemDetail.css";
 import ItemCount from "../ItemListContainer/ItemCount";
+import Cart from "../Cart/Cart";
 
-export const ItemDetail = ({detalles,id,nombre, precio, stock}) => {
+const ItemDetail = ({detalles, stock}) => {
 
-    const [irACarrito, setIrACarrito] = useState(false);
+    const [irACarrito, setIrACarrito] = useState(0);
+
     const {addItem} = useContext(CartContext)
 
-    const onAdd = (cantidad) =>{
-        setIrACarrito(cantidad)
+    const onAdd = (quantity) =>{
+        setIrACarrito(quantity)
 
         const item = {
-            id,nombre,precio
+            detalles
         }
 
-        addItem(item, cantidad)
+        addItem(item, quantity)
     }
 
     return(
@@ -45,9 +47,12 @@ export const ItemDetail = ({detalles,id,nombre, precio, stock}) => {
             
             <footer>
                 {
-                    irACarrito 
-                    ? <Link to='/cart' className="option"> Terminar mi compra</Link>
-                    :<ItemCount stock={detalles.stock} iniciador={1} onAdd={onAdd}/>
+                    irACarrito > 0 ? (
+                    <Link to='/cart' className="option"> Terminar mi compra</Link>
+                    )
+                    :(
+                    <ItemCount stock={detalles.stock} iniciador={1} onAdd={onAdd}/>
+                    )
                 }
                 
 
