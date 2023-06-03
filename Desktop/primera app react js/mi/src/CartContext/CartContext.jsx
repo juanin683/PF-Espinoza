@@ -10,12 +10,11 @@ export const CartProvider = ({children}) => {
     console.log(cart)
 
     const addItem = (item, quantity) => {
-        if (!isInCart(item.id)) {
+        if (isInCart(item.id)) {
 
-            // setCart(cart.map(prod => {
-            //     return prod.id === item.id ? { ...prod, quantity: prod.quantity + quantity}: prod
-            // }));
-            setCart(prev => [...prev, {...item, quantity}])
+            setCart(cart.map(prod => {
+                 return prod.id === item.id ? { ...prod, quantity: prod.quantity + quantity}: prod
+             }));
         
         } else {
             setCart([...cart, {...item,quantity}])   
@@ -26,11 +25,7 @@ export const CartProvider = ({children}) => {
         setCart([])
     }
 
-    const isInCart = (itemId) => {
-        
-        return cart.some(prod => prod.id === itemId)
-    }
-        //(id) => cart.find(prod => prod.id ===id) ? true : false;
+    const isInCart = (id) => cart.find(prod => prod.id ===id) ? true : false;
 
 
     const removeItem = (itemId) =>{ 

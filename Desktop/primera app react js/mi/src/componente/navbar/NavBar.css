@@ -33,6 +33,7 @@ background-image: linear-gradient(151deg, #14123c 0%, #2c0609 25%, #b1a46d 66%, 
   padding: 8px;
   border-top-left-radius: 0.5rem;
   border-bottom-left-radius: .5rem;
+  text-decoration: none;
 }
 
 .home:hover{
@@ -66,14 +67,9 @@ background-image: linear-gradient(151deg, #14123c 0%, #2c0609 25%, #b1a46d 66%, 
   font-family: 'Kanit', sans-serif;
 font-family: 'Poppins', sans-serif;
 }
-/* 
-.estilo2{
-  padding-top: 4px;
-  padding-left: 30px;
-  display: block;
-  border-radius: 0.5rem 8px;
-  color: rgba(240, 248, 255, 0.506);
-} */
+
+
+
 
 
 

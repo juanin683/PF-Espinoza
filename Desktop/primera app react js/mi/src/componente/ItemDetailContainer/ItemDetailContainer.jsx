@@ -1,27 +1,46 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from 'react-router-dom';
-import { getDetalles } from '../ItemListContainer/Items';
 import ItemDetail from '../ItemDetail/ItemDetail'
+
+import {doc,getDoc} from 'firebase/firestore'
+import { db } from '../../service/firebase/firebaseConfig'
+
 
 const  ItemDetailContainer = () =>{
     const [detalles,setDetalles] = useState([])
 
-    const { itemConId } = useParams()
+     const { itemConId } = useParams()
 
 
     useEffect(() =>{
-        getDetalles(itemConId)
 
-        .then(response => {
-            setDetalles(response)
         
+
+        const queryDoc = doc(db, 'Productos', itemConId);
+        getDoc(queryDoc)
+        .then(res =>{
+            const dato = res.dato()
+
+            const productAdapted = { id: res.id, ...dato}
+
+            setDetalles(productAdapted)
         })
 
-        .catch(err=>{
-            console.log(err)
-        }
-        )
-    }, [itemConId])
+        .catch(error=>{
+            console.log(error)
+        })
+        // getDetalles(itemConId)
+
+        // .then(response => {
+        //     setDetalles(response)
+        
+        // })
+
+        // .catch(err=>{
+        //     console.log(err)
+        // }
+        // )
+    })
 
     return(
         <>

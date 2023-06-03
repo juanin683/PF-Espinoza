@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import './Item.css'
-import { getDatos } from "./Items";
 import Button from "./Button";
 import ItemDetail from "../ItemDetail/ItemDetail";
 import { CartContext } from "../../CartContext/CartContext";
