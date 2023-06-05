@@ -21,18 +21,18 @@ const SideBar = () => {
                 < CartWidget/>
 
                 <li className="home">
-                     <NavLink to='/categoria/tablets' className="estilo1"> Tablets</NavLink>
+                     <NavLink to='/categoria/Tablets' className="estilo1"> Tablets</NavLink>
                 </li>
 
                 <li className="home">
                      <NavLink to='/categoria/celulares' className="estilo1"> Celulares</NavLink>
                 </li>
                 <li className="home">
-                     <NavLink to='/categoria/laptops' className="estilo1"> Laptops</NavLink>
+                     <NavLink to='/categoria/Notebooks' className="estilo1"> Laptops</NavLink>
                 </li>
                 
                 <li className="home">
-                     <NavLink to='/categoria/accesorios y componentes' className="estilo1"> Accesorios y Componentes</NavLink>
+                     <NavLink to='/categoria/Accesorios y Componentes' className="estilo1"> Accesorios y Componentes</NavLink>
                 </li>
 
 

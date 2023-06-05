@@ -3,10 +3,9 @@ import { CartContext } from "../../CartContext/CartContext"
 import { Link } from "react-router-dom"
 import CartItem from "../CartItem/CartItem"
 
-
- const Cart = () => {
+ const Cart = async ({nombre, telefono, email}) => {
     const { cart, clearCart, totalPrecio} = useContext(CartContext)
-    
+
     if (cart.length === 0 ) {
         return(
             <div>
@@ -23,6 +22,8 @@ import CartItem from "../CartItem/CartItem"
             }
             <h2> Total : $ {totalPrecio()}  </h2>
             <button onClick={() => clearCart()} className="boton-limpiar-carrito"> Limpiar Carrito</button>
+
+            
         </div>
     )
 }

@@ -19,9 +19,9 @@ const  ItemDetailContainer = () =>{
         const queryDoc = doc(db, 'Productos', itemConId);
         getDoc(queryDoc)
         .then(res =>{
-            const dato = res.dato()
+            const data = res.data()
 
-            const productAdapted = { id: res.id, ...dato}
+            const productAdapted = { id: res.id, ...data}
 
             setDetalles(productAdapted)
         })
@@ -40,7 +40,7 @@ const  ItemDetailContainer = () =>{
         //     console.log(err)
         // }
         // )
-    })
+    },[itemConId])
 
     return(
         <>
