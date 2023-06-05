@@ -1,17 +1,19 @@
-import { addDoc, collection, doc, getDocs, query, where } from "firebase/firestore"
+import { addDoc, collection, doc, documentId, getDocs, query, where } from "firebase/firestore"
 import { db }from '../../service/firebase/firebaseConfig'
 import { useState } from "react"
 import { CartContext } from "../../CartContext/CartContext"
-
+import { useContext } from "react"
 import CheckoutForm from './Checkoutform'
 import Cart from "../Cart/Cart"
+import { writeBatch } from "firebase/firestore"
+import { Timestamp } from "firebase/firestore"
 
 
 const Checkout = () => {
     const { cart, clearCart, totalPrecio} = useContext(CartContext)
 
 
-    const { ordenId, setOrdenId} = useState('')
+    const  [ordenId, setOrdenId] = useState('')
 
     const crearOrden = async ({nombre, telefono, email}) =>{
         const objetoOrden = {
@@ -34,13 +36,13 @@ const Checkout = () => {
     
         const productsRef = collection(db, 'Productos')
     
-        const productsAddedFromFirestore = await getDocs(query(productsRef,where()))
+        const productsAddedFromFirestore = await getDocs(query(productsRef,where(documentId(), 'in',ids)))
         
         const { docs } = productsAddedFromFirestore
 
         docs.forEach(doc => {
             const dataDoc = doc.data()
-            const stockDb = dataStock.stock
+            const stockDb = dataDoc.stock
 
             const productsAddedToCart = cart.find(prod => prod.id === doc.id)
             const prodQuantity = productsAddedToCart?.quantity
@@ -68,8 +70,6 @@ const Checkout = () => {
     }
 
 
-   
-
 
     if (ordenId) {
         return <h1> El ID de su orden es: {ordenId}</h1>
@@ -81,6 +81,8 @@ const Checkout = () => {
           <CheckoutForm onConfirm = {crearOrden}/>
         </div>
     )
+
+
 }
 
 export default  Checkout ;

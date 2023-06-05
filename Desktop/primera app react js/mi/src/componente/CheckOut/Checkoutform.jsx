@@ -4,9 +4,9 @@ import { useState } from "react"
 
 
 const Checkoutform =  ({onConfirm}) => {
-    const {nombre, setNombre} = useState('')
-    const {telefono, setTelefono} = useState('')
-    const {email, setEmail} = useState('')
+    const [nombre, setNombre] = useState('')
+    const [telefono, setTelefono] = useState('')
+    const [email, setEmail] = useState('')
 
 
     const handleConfirm = (event)=> {

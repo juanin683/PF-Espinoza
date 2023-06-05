@@ -2,8 +2,11 @@ import { useContext } from "react"
 import { CartContext } from "../../CartContext/CartContext"
 import { Link } from "react-router-dom"
 import CartItem from "../CartItem/CartItem"
+import Checkout from "../CheckOut/Checkout"
+import Checkoutform from "../CheckOut/Checkoutform"
 
- const Cart = async ({nombre, telefono, email}) => {
+
+ const Cart = ({nombre, telefono, email}) => {
     const { cart, clearCart, totalPrecio} = useContext(CartContext)
 
     if (cart.length === 0 ) {
@@ -23,7 +26,7 @@ import CartItem from "../CartItem/CartItem"
             <h2> Total : $ {totalPrecio()}  </h2>
             <button onClick={() => clearCart()} className="boton-limpiar-carrito"> Limpiar Carrito</button>
 
-            
+            <Link to='/checkout'>Checkout</Link>
         </div>
     )
 }
