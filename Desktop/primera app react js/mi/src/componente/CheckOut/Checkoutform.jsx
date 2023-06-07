@@ -1,10 +1,12 @@
+import './Checkout.css'
 import { useState } from "react"
-
 
 
 
 const Checkoutform =  ({onConfirm}) => {
     const [nombre, setNombre] = useState('')
+    const [apellido, setApellido] = useState('')
+
     const [telefono, setTelefono] = useState('')
     const [email, setEmail] = useState('')
 
@@ -13,7 +15,7 @@ const Checkoutform =  ({onConfirm}) => {
        event.preventDefault()
 
        const datosUser = {
-        nombre, telefono, email
+        nombre,apellido, telefono, email
        }
 
 
@@ -23,10 +25,11 @@ const Checkoutform =  ({onConfirm}) => {
 
     
     return(
-        <div>
-          <form onSubmit={handleConfirm}>
-            <label htmlFor="">
-                Nombre
+        
+        <>
+          <form onSubmit={handleConfirm} className='form-container'>
+            <label htmlFor=""className='label'>
+                <p className='p-form'>Nombre</p>
                 <input type="text"
                  value={nombre}
                 onChange={({target}) => setNombre(target.value)}
@@ -36,8 +39,19 @@ const Checkoutform =  ({onConfirm}) => {
                 />
             </label>
 
-            <label htmlFor="">
-                Telefono
+            <label htmlFor="" className='label'>
+                <p className='p-form'>Apellido</p>
+                <input type="text"
+                 value={apellido}
+                onChange={({target}) => setApellido(target.value)}
+                
+                
+                
+                />
+            </label>
+
+            <label htmlFor="" className='label'>
+                <p className='p-form'>Telefono</p>
                 <input type="text"
                  value={telefono}
                 onChange={({target}) => setTelefono(target.value)}
@@ -47,8 +61,8 @@ const Checkoutform =  ({onConfirm}) => {
                 />
             </label>
 
-            <label htmlFor="">
-                Email
+            <label htmlFor="" className='label'>
+                <p className='p-form'>Email</p>
                 <input type="text"
                  value={email}
                 onChange={({target}) => setEmail(target.value)}
@@ -57,12 +71,24 @@ const Checkoutform =  ({onConfirm}) => {
                 
                 />
             </label>
-            <div>
-                <button type='submit'> Crear Orden</button>
-            </div>
+
+            
+            
+                <button className='boton-crear-orden'type='submit'> Crear Orden</button>
+            
+
+
+        
           </form>
-        </div>
+          </>
+
+
+
+        
+    
     )
 }
+
+
 
 export default  Checkoutform ;

@@ -1,10 +1,11 @@
 import { addDoc, collection, doc, documentId, getDocs, query, where } from "firebase/firestore"
-import { db }from '../../service/firebase/firebaseConfig'
 import { useState } from "react"
 import { CartContext } from "../../CartContext/CartContext"
 import { useContext } from "react"
+import './Checkout.css'
 import CheckoutForm from './Checkoutform'
 import Cart from "../Cart/Cart"
+import { db }from '../../service/firebase/firebaseConfig'
 import { writeBatch } from "firebase/firestore"
 import { Timestamp } from "firebase/firestore"
 
@@ -15,13 +16,13 @@ const Checkout = () => {
 
     const  [ordenId, setOrdenId] = useState('')
 
-    const crearOrden = async ({nombre, telefono, email}) =>{
+    const crearOrden = async ({nombre,apellido, telefono, email}) =>{
         const objetoOrden = {
-        comprador: [
-            
-            nombre,telefono,email
-            
-        ],
+        comprador: {nombre,
+        apellido,
+        telefono,
+        email,
+        },
         items: cart,
         total: totalPrecio(),
         date: Timestamp.fromDate(new Date())
@@ -72,11 +73,11 @@ const Checkout = () => {
 
 
     if (ordenId) {
-        return <h1> El ID de su orden es: {ordenId}</h1>
+        return <h1 className="container-checkout"> El ID de su orden es: {ordenId}</h1>
     }
     
     return(
-        <div>
+        <div className="container-checkout">
           <h1> Checkout </h1>
           <CheckoutForm onConfirm = {crearOrden}/>
         </div>
